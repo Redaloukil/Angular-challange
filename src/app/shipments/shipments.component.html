@@ -1,8 +1,18 @@
 <h1>Shippment lists</h1>
 
-<ul>
-    <li *ngFor="let shippment of shippments">
-      {{shippment.id}} {{ shippment.name}}  <a [routerLink]="['/shipments', shippment.id]">more Details</a>
-    </li>
-    
-</ul>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Details</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let shippment of shippments">
+      <th scope="row">{{shippment.id}}</th>
+      <td>{{ shippment.name}} </td>
+      <td><a [routerLink]="['/shipments', shippment.id]">more Details</a></td>
+    </tr>
+  </tbody>
+</table>

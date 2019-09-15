@@ -24,9 +24,28 @@ export class ShipmentsDetailsComponent implements OnInit {
   ngOnInit() {
     this.route.params.subscribe(params => {
       this.id = +params['id']; // (+) converts string 'id' to a number
-      this.appService.getShipmentById(this.id).subscribe(data => {this.shippment = data ; console.log(this.shippment)});
+      this.appService.getShipmentById(this.id).subscribe(data => {
+        this.shippment = data ; 
+        data.sea_shipments[0].statuses.reverse().map((element) => {
+          console.log(element)
+          this.timelineItems.push( 
+            {
+              title : element.event_date,
+              label : element.message,
+              icon : 'fa fa-plus',
+              active : true,
+              color : '#333',
+            }
+          )
+        });
+      });
+
     });
-    this.timelineItems = this.appService.getTimeLineItems();
+
+
+    
+    
+    
   }
 
 }

@@ -8,7 +8,7 @@ import { AppComponent } from './app.component';
 import { Routes , RouterModule} from '@angular/router';
 //Components
 import { NavbarComponent } from './navbar/navbar.component';
-import { AuthComponent } from './auth/auth.component';
+import { HomeComponent } from './home/home.component';
 import { ShipmentsComponent } from './shipments/shipments.component';
 import { ShipmentsDetailsComponent } from './shipments-details/shipments-details.component';
 import { NotFoundComponent } from './not-found/not-found.component';
@@ -16,10 +16,10 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import {AppService} from './app.service'
 
 //Third Party components 
-import { NgxHorizontalTimelineComponent} from 'ngx-horizontal-timeline'
+import { NgxHorizontalTimelineComponent} from 'ngx-horizontal-timeline';
 
 const appRoutes: Routes = [
-  { path: '', redirectTo: 'shipments', pathMatch: 'full' },
+  { path: '', component: HomeComponent },
   { path: 'shipments' , component : ShipmentsComponent },
   { path: 'shipments/:id' , component : ShipmentsDetailsComponent },
   { path: '**', component: NotFoundComponent },
@@ -31,16 +31,17 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     NavbarComponent,
-    AuthComponent,
+    HomeComponent,
     ShipmentsComponent,
     ShipmentsDetailsComponent,
     NotFoundComponent,
-    NgxHorizontalTimelineComponent
+    NgxHorizontalTimelineComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule.forRoot(appRoutes , { enableTracing: true }),// { enableTracing: true } // <-- debugging purposes only)
+    RouterModule.forRoot(appRoutes),// { enableTracing: true } // <-- debugging purposes only)
     HttpClientModule,
     // other imports here
   ],
