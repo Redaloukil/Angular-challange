@@ -1,1 +1,8 @@
 <h1>Shippment lists</h1>
+
+<ul>
+    <li *ngFor="let shippment of shippments">
+      {{shippment.id}} {{ shippment.name}}  <a [routerLink]="['/shipments', shippment.id]">more Details</a>
+    </li>
+    
+</ul>

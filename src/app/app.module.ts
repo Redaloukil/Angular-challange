@@ -15,8 +15,11 @@ import { NotFoundComponent } from './not-found/not-found.component';
 //Services
 import {AppService} from './app.service'
 
+//Third Party components 
+import { NgxHorizontalTimelineComponent} from 'ngx-horizontal-timeline'
+
 const appRoutes: Routes = [
-  { path: 'auth', component: AuthComponent },
+  { path: '', redirectTo: 'shipments', pathMatch: 'full' },
   { path: 'shipments' , component : ShipmentsComponent },
   { path: 'shipments/:id' , component : ShipmentsDetailsComponent },
   { path: '**', component: NotFoundComponent },
@@ -31,17 +34,17 @@ const appRoutes: Routes = [
     AuthComponent,
     ShipmentsComponent,
     ShipmentsDetailsComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    NgxHorizontalTimelineComponent
   ],
   imports: [
-    
     BrowserModule,
     AppRoutingModule,
-    RouterModule.forRoot(appRoutes),// { enableTracing: true } // <-- debugging purposes only)
+    RouterModule.forRoot(appRoutes , { enableTracing: true }),// { enableTracing: true } // <-- debugging purposes only)
     HttpClientModule,
     // other imports here
   ],
-  providers: [ AppService ],
+  providers: [AppService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

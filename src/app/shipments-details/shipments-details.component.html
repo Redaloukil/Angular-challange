@@ -1,1 +1,9 @@
 <h1>shipments-details works!</h1>
+<h2>{{shippment.id}}</h2>
+<h2>{{shippment.name}}</h2>
+
+<li *ngFor="let status of shippment.sea_shipments[0].statuses">
+        {{status.message}}
+</li>
+
+<ngx-htl-horizontal-timeline [(items)]="timelineItems"></ngx-htl-horizontal-timeline>

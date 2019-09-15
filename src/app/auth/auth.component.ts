@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { AppService} from '../app.service';
 @Component({
   selector: 'app-auth',
   templateUrl: './auth.component.html',
@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AuthComponent implements OnInit {
 
-  constructor() { }
+  constructor(private AppService :AppService) { }
+
+  public users;
 
   ngOnInit() {
+   
   }
 
 }
