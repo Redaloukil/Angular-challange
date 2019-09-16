@@ -1,7 +1,13 @@
-<h1>shipments-details works!</h1>
-<h2>{{shippment.id}}</h2>
-<h2>{{shippment.name}}</h2>
+<h1 class="h3">{{title}}</h1>
+<hr/>
+
+<h3 class="h6">Shipment id : {{shippment.id}}</h3>
+<h3 class="h6">Shipment name : {{shippment.name}}</h3>
 
 
+<div class="horizontal-timeline">
+    
+    <ngx-htl-horizontal-timeline [(items)]="timelineItems" styleClass="marker:{ width:20px; height:20px}"></ngx-htl-horizontal-timeline>
+</div>
 
-<ngx-htl-horizontal-timeline [(items)]="timelineItems"></ngx-htl-horizontal-timeline>
+

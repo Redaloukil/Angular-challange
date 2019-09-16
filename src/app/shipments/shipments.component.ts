@@ -9,7 +9,8 @@ import { AppService } from '../app.service';
 export class ShipmentsComponent implements OnInit {
 
   public shippments:any;
-  
+  public title:string = "Shipments";
+
   constructor(private appService : AppService) { }
 
   ngOnInit() {

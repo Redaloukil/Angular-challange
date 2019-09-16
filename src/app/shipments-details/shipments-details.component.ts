@@ -15,6 +15,7 @@ export class ShipmentsDetailsComponent implements OnInit {
   id: number;
   private sub: any;
   public shippment : any;
+  public title:string = "Shipment Details";
   public timelineItems : TimelineItem[] = []
 
 
@@ -26,18 +27,19 @@ export class ShipmentsDetailsComponent implements OnInit {
       this.id = +params['id']; // (+) converts string 'id' to a number
       this.appService.getShipmentById(this.id).subscribe(data => {
         this.shippment = data ; 
-        data.sea_shipments[0].statuses.reverse().map((element) => {
+        data.sea_shipments[0].statuses.reverse().map((element , key) => {
           console.log(element)
           this.timelineItems.push( 
             {
-              title : element.event_date,
-              label : element.message,
+              id:key,
+              title : element.event_date ,
+              label : element.message ,
               icon : 'fa fa-plus',
               active : true,
-              color : '#333',
+              color : '3498db'
+              
             }
-          )
-        });
+        );
       });
 
     });
@@ -46,6 +48,7 @@ export class ShipmentsDetailsComponent implements OnInit {
     
     
     
-  }
+  })
 
+}
 }

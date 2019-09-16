@@ -1,0 +1,15 @@
+body {
+    font-size: 16px;
+    background-color: #f4f4f4 !important;
+}
+
+#wrapper {
+    padding: 5%;
+}
+
+#content {
+    background: white;
+    padding:5%;
+    box-shadow: 0px 2px 10px rgba(0,0,0,0.1);
+}
+

@@ -19,17 +19,8 @@ export class AppComponent implements OnInit {
   title = 'Dockflow-test';
   url = 'https://run.dockflow.com/api/shipments/';
 
-  
-
-
   ngOnInit(){
         
   }
-  getData(){
-    
-  }
-
-
-
 
 }

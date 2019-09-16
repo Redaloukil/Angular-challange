@@ -1,0 +1,21 @@
+.horizontal-timeline {
+    padding:8% 1%;
+} 
+
+.marker[_ngcontent-iny-c3] {
+    width:10px !important;
+    height:10px !important;
+}
+
+.marker {
+    width:10px !important;
+    height:10px !important;
+}
+.marker .timeline-icon {
+    width:10px !important;
+    height:10px !important;
+}
+
+.timeline-label {
+    font-size: 14px;
+}
